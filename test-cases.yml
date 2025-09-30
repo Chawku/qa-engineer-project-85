@@ -18,6 +18,132 @@
     Пользователь успешно регистрируется и попадает на главную страницу
 
 - summary: |
+    Проверка регистрации с паролем, содержащим спецсимволы
+  requirement: |
+    Пользователь должен иметь возможность задать пароль длиной до 16 символов, включая спецсимволы
+  prerequisites: |
+    Открыта страница регистрации
+  test-data: |
+    Email = user1@example.com
+    Ник = user1111
+    Пароль = Pass!@#-?
+  steps:
+    - Ввести email
+    - Ввести ник
+    - Ввести пароль Pass!@#-?
+    - Нажать кнопку "Submit"
+  expected-result: |
+    Пользователь успешно регистрируется
+
+- summary: |
+    Проверка регистрации с паролем длиннее 16 символов
+  requirement: |
+    Система должна отклонять пароль длиннее 16 символов
+  prerequisites: |
+    Открыта страница регистрации
+  test-data: |
+    Email = user2@example.com
+    Ник = user2222
+    Пароль = LongPassword!12345 (17 символов)
+  steps:
+    - Ввести email
+    - Ввести ник
+    - Ввести пароль LongPassword!12345
+    - Нажать кнопку "Submit"
+  expected-result: |
+    Отображается ошибка "Should be from 6 to 16 characters"
+
+- summary: |
+    Проверка регистрации с ником, содержащим спецсимволы
+  requirement: |
+    Ник должен содержать только буквы, цифры и допустимые символы (_ или -)
+  prerequisites: |
+    Открыта страница регистрации
+  test-data: |
+    Email = user3@example.com
+    Ник = user3333!@#
+    Пароль = Pass123!
+  steps:
+    - Ввести email
+    - Ввести ник user!@#
+    - Ввести пароль
+    - Нажать кнопку "Submit"
+  expected-result: |
+    Отображается ошибка "Must consist of Latin letters, numbers and underscores. Only begin with latin letter"
+
+- summary: |
+    Проверка регистрации с ником длиной до 16 символов
+  requirement: |
+    Ник должен быть не длиннее 16 символов
+  prerequisites: |
+    Открыта страница регистрации
+  test-data: |
+    Email = user4@example.com
+    Ник = usernickname1234 (16 символов)
+    Пароль = Pass123!
+  steps:
+    - Ввести email
+    - Ввести ник
+    - Ввести пароль
+    - Нажать кнопку "Submit"
+  expected-result: |
+    Пользователь успешно регистрируется
+
+- summary: |
+    Проверка регистрации с ником длиннее 16 символов
+  requirement: |
+    Система должна отклонять ник длиннее 16 символов
+  prerequisites: |
+    Открыта страница регистрации
+  test-data: |
+    Email = user5@example.com
+    Ник = usernickname12345 (17 символов)
+    Пароль = Pass123!
+  steps:
+    - Ввести email
+    - Ввести ник
+    - Ввести пароль
+    - Нажать кнопку "Submit"
+  expected-result: |
+    Отображается ошибка "Should be from 3 to 16 characters"
+
+- summary: |
+    Проверка регистрации с некорректным email (без @)
+  requirement: |
+    Email должен соответствовать формату user@example.com
+  prerequisites: |
+    Открыта страница регистрации
+  test-data: |
+    Email = userexample.com
+    Ник = user6666
+    Пароль = Pass123!
+  steps:
+    - Ввести email без @
+    - Ввести ник
+    - Ввести пароль
+    - Нажать кнопку "Submit"
+  expected-result: |
+    Отображается ошибка "Invalid email"
+
+- summary: |
+    Проверка регистрации с email, содержащим спецсимволы
+  requirement: |
+    Email должен допускать символы точка (.), подчеркивание (_) и дефис (-)
+  prerequisites: |
+    Открыта страница регистрации
+  test-data: |
+    Email = user.name-12_test@example.com
+    Ник = user7777
+    Пароль = Pass123!
+  steps:
+    - Ввести email user.name-12_test@example.com
+    - Ввести ник
+    - Ввести пароль
+    - Нажать кнопку "Submit"
+  expected-result: |
+    Пользователь успешно регистрируется
+
+- summary: |
     Проверка входа пользователя с существующими логином и паролем
   requirement: |
     При верном вводе логина и пароля пользователь должен войти в систему
