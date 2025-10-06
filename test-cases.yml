@@ -4,12 +4,14 @@
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться при вводе корректных данных
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = testshrimp@inbox.ru
+    Email = новый email (пример: testuser@box.ru)
     Ник = testuser_101
     Пароль = Testdata101!
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email
     - Ввести ник
     - Ввести пароль
@@ -22,12 +24,14 @@
   requirement: |
     Пользователь должен иметь возможность задать пароль длиной до 16 символов, включая спецсимволы
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = user1@example.com
+    Email = новый email (пример: user1@example.com)
     Ник = user1111
     Пароль = Pass!@#-?
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email
     - Ввести ник
     - Ввести пароль Pass!@#-?
@@ -40,12 +44,14 @@
   requirement: |
     Система должна отклонять пароль длиннее 16 символов
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = user2@example.com
+    Email = новый email (пример: user2@example.com)
     Ник = user2222
     Пароль = LongPassword!12345 (17 символов)
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email
     - Ввести ник
     - Ввести пароль LongPassword!12345
@@ -58,12 +64,14 @@
   requirement: |
     Ник должен содержать только буквы, цифры и допустимые символы (_ или -)
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = user3@example.com
+    Email = новый email (пример: user3@example.com)
     Ник = user3333!@#
     Пароль = Pass123!
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email
     - Ввести ник user!@#
     - Ввести пароль
@@ -76,12 +84,14 @@
   requirement: |
     Ник должен быть не длиннее 16 символов
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = user4@example.com
+    Email = новый email (пример: user4@example.com)
     Ник = usernickname1234 (16 символов)
     Пароль = Pass123!
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email
     - Ввести ник
     - Ввести пароль
@@ -94,12 +104,14 @@
   requirement: |
     Система должна отклонять ник длиннее 16 символов
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = user5@example.com
+    Email = новый email (пример: user5@example.com)
     Ник = usernickname12345 (17 символов)
     Пароль = Pass123!
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email
     - Ввести ник
     - Ввести пароль
@@ -112,12 +124,14 @@
   requirement: |
     Email должен соответствовать формату user@example.com
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = userexample.com
+    Email = новый email (пример: userexample.com)
     Ник = user6666
     Пароль = Pass123!
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email без @
     - Ввести ник
     - Ввести пароль
@@ -130,12 +144,14 @@
   requirement: |
     Email должен допускать символы точка (.), подчеркивание (_) и дефис (-)
   prerequisites: |
-    Открыта страница регистрации
+    Открыта главная страница
   test-data: |
-    Email = user.name-12_test@example.com
+    Email = новый email (пример: user.name-12_test@example.com)
     Ник = user7777
     Пароль = Pass123!
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign Up"
     - Ввести email user.name-12_test@example.com
     - Ввести ник
     - Ввести пароль
@@ -148,12 +164,14 @@
   requirement: |
     При верном вводе логина и пароля пользователь должен войти в систему
   prerequisites: |
-    Открыта страница логина
+    Открыта главная страница
     Существующий пользователь зарегистрирован в системе
   test-data: |
     Логин = testuser101
     Пароль = Testdata101!
   steps:
+    - Открыта главная страница (https://codebattle.hexlet.io/)
+    - Нажать "Sign In"
     - Ввести логин
     - Ввести пароль
     - Нажать кнопку "Submit"
