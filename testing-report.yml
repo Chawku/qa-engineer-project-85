@@ -80,7 +80,15 @@
   status: pass
 
 - summary: |
-    Проверка создания игры с другом по ссылке
+    Проверка отправки инвайта другу в игру
+  status: pass
+
+- summary: |
+    Проверка присоединения к игре по инвайту
+  status: pass
+
+- summary: |
+    Проверка отмены создания игры по ссылке
   status: pass
 
 - summary: |
@@ -125,4 +133,8 @@
 
 - summary: |
     Проверка защиты от XSS (Cross-Site Scripting)
+  status: pass
+
+- summary: |
+    Проверка защиты от SQL-инъекции
   status: pass
