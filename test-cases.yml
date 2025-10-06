@@ -4,7 +4,7 @@
   requirement: |
     Пользователь должен иметь возможность зарегистрироваться при вводе корректных данных
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: testuser@box.ru)
     Ник = testuser_101
@@ -24,7 +24,7 @@
   requirement: |
     Пользователь должен иметь возможность задать пароль длиной до 16 символов, включая спецсимволы
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: user1@example.com)
     Ник = user1111
@@ -44,7 +44,7 @@
   requirement: |
     Система должна отклонять пароль длиннее 16 символов
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: user2@example.com)
     Ник = user2222
@@ -64,7 +64,7 @@
   requirement: |
     Ник должен содержать только буквы, цифры и допустимые символы (_ или -)
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: user3@example.com)
     Ник = user3333!@#
@@ -84,7 +84,7 @@
   requirement: |
     Ник должен быть не длиннее 16 символов
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: user4@example.com)
     Ник = usernickname1234 (16 символов)
@@ -104,7 +104,7 @@
   requirement: |
     Система должна отклонять ник длиннее 16 символов
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: user5@example.com)
     Ник = usernickname12345 (17 символов)
@@ -124,7 +124,7 @@
   requirement: |
     Email должен соответствовать формату user@example.com
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: userexample.com)
     Ник = user6666
@@ -144,7 +144,7 @@
   requirement: |
     Email должен допускать символы точка (.), подчеркивание (_) и дефис (-)
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = новый email (пример: user.name-12_test@example.com)
     Ник = user7777
@@ -164,7 +164,7 @@
   requirement: |
     При верном вводе логина и пароля пользователь должен войти в систему
   prerequisites: |
-    Открыта главная страница
+    Открыта главная страница (https://codebattle.hexlet.io/)
     Существующий пользователь зарегистрирован в системе
   test-data: |
     Логин = testuser101
@@ -311,7 +311,7 @@
   requirement: |
     Пользователь должен иметь возможность восстановить пароль через email
   prerequisites: |
-    Открыта страница восстановления пароля
+    Открыта главная страница (https://codebattle.hexlet.io/)
   test-data: |
     Email = testshrimp101@inbox.ru
   steps:
@@ -319,6 +319,11 @@
     - Нажать кнопку "Forgot your password?"
     - Ввести email
     - Открыть письмо и перейти по ссылке
+    - Ввести новый пароль
+    - Открыть главную страницу (https://codebattle.hexlet.io/)
+    - Нажать "Sign In"
+    - Ввести логин и новый пароль
+    - Нажать "Submit"
   expected-result: |
     Пользователю отправляется письмо с инструкцией по восстановлению пароля и он может восстановить пароль
 
